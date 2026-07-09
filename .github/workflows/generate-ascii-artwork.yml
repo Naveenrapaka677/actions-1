@@ -1,26 +1,29 @@
-name: generate ascii artwork
+name: Generate ASCII Artwork
 
 on: push
 
 jobs:
-    ascii_job
+  ascii_job:
     runs-on: ubuntu-latest
-    steps
-    - name: Checkout Repository
-      uses: actions/checkout@v4
 
-    - name: Install cowsay Program
-      run: sudo apt-get install cowsay -y
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-    - name: Execute cowsay cmd
-      run: cowsay -f tiger "Run for cover, Iam tiger.....RAWR" >>  tiger.txt 
+      - name: Install cowsay Program
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cowsay
 
+      - name: Execute cowsay command
+        run: |
+          /usr/games/cowsay -f tiger "Run for cover, I am tiger.....RAWR" > tiger.txt
 
-    - name: test file exits
-      run: grep -i "tiger" tiger.txt
+      - name: Test file exists
+        run: grep -i "tiger" tiger.txt
 
-    - name: red file
-      run: cat tiger.txt
+      - name: Read file
+        run: cat tiger.txt
 
-    - name: list repo files
-      run: ls -ltra
+      - name: List repository files
+        run: ls -ltra
