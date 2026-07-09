@@ -17,13 +17,14 @@ jobs:
 
       - name: Execute cowsay command
         run: |
-          /usr/games/cowsay -f tiger "Run for cover, I am tiger.....RAWR" > tiger.txt
+          /usr/games/cowsay -f dragon "Run for cover, I am dragon.....RAWR" > dragon.txt
+          cat dragon.txt
 
       - name: Test file exists
-        run: grep -i "tiger" tiger.txt
+        run: grep -i "dragon" dragon.txt
 
       - name: Read file
-        run: cat tiger.txt
+        run: cat dragon.txt
 
       - name: List repository files
         run: ls -ltra
