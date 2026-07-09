@@ -1,4 +1,4 @@
-name: first workflow naveen
+name: My First Workflow
 
 on: push
 
