@@ -1,0 +1,26 @@
+name: sample script
+
+on: push
+
+jobs:
+  build_job:
+    runs-on: ubuntu-latest
+
+    steps: 
+
+      - name: project building
+        run: echo "Building project..."
+
+      - name: Sleeps for 5 seconds
+        run: sleep 5
+  test_job:
+    needs: build_job
+    runs-on: ubuntu-latest
+    
+    steps:
+
+      - name: running tests
+        run: echo "Running tests..."
+
+      - name: current date
+        run: date
