@@ -7,12 +7,20 @@ on:
 jobs:
   deploy:
     strategy:
+      fail-fast: false
+      max-parllel: 2
       matrix:
-        os: [ubuntu-latest, widnows-latest]
+        os: [ubuntu-latest, ubuntu-20.04, windows-latest]
         images: [hello-world, alphine]
+        exclude:
+          - image: alphine
+            os: windows-latest
+        include:
+          - image: amd64/alphine
+            os: ubuntu-latest
+        
 
     runs-on: ${{ matrix.os }}
-
     steps:
       - name: Echo Docker Details
         run: docker info
