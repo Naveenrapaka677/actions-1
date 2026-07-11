@@ -4,10 +4,6 @@ on:
   push:
   workflow_dispatch:
 
-concurrency:
-  group: my-workflow
-  cancle-in-progress: true 
-
 jobs:
   deploy:
     strategy:
