@@ -1,7 +1,7 @@
 name: Event Demo
 
 on: 
-  push:
+  #push:
   workflow-dispatch:
 
 # jobs:
