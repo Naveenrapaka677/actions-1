@@ -4,28 +4,28 @@ on:
   push:
   workflow-dispatch:
 
-jobs:
-  event_job:
-    runs-on: ubuntu-latest
+# jobs:
+#   event_job:
+#     runs-on: ubuntu-latest
 
-    steps: 
+#     steps: 
 
-      - name: checkout repo
-        uses: actions/checkout@v4
+#       - name: checkout repo
+#         uses: actions/checkout@v4
 
-      - name: list and read files
-        run: |
-          whoami
-          pwd
-          date
+#       - name: list and read files
+#         run: |
+#           whoami
+#           pwd
+#           date
 
-      - name: display current brach 
-        run: echo "${{ github.ref_name }}"
+#       - name: display current brach 
+#         run: echo "${{ github.ref_name }}"
 
-      - name: display repo name
-        run: echo "${{ github.repository }}"
+#       - name: display repo name
+#         run: echo "${{ github.repository }}"
           
-      - name: learning github
-        run: echo "Learning GitHub Actions with Naveen!"
+#       - name: learning github
+#         run: echo "Learning GitHub Actions with Naveen!"
 
     

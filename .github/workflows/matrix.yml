@@ -1,0 +1,25 @@
+name: Matrix Configuration
+
+on: 
+  push:
+  workflow_dispatch:
+
+concurrency:
+  group: my-workflow
+  cancle-in-progress: true 
+
+jobs:
+  deploy:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, widnows-latest]
+        images: [hello-world, alphine]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Echo Docker Details
+        run: docker info
+
+      - name: Run Images on ${{ matrix.os }}
+        run: docker run ${{ matrix.images }}
