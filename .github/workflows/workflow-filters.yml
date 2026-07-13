@@ -8,7 +8,7 @@ on:
       - main
       - feature/*
     paths-ignore:
-      - README.md
+      - '**/README.md'
 
   pull_request:
     types:
